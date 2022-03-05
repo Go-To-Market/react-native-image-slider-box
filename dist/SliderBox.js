@@ -30,6 +30,7 @@ import styles from './SliderBox.style';
 // imageLoadingColor = "#E91E63"
 // firstItem = 0
 // activeOpacity
+// containerStyle
 
 const width = Dimensions.get('window').width;
 
@@ -75,14 +76,15 @@ export class SliderBox extends Component {
       resizeMode,
       imageLoadingColor = '#E91E63',
       underlayColor = "transparent",
-      activeOpacity=0.85
+      activeOpacity=0.85,
+      containerStyle={}
     } = this.props;
     return (
       <View
-        style={{
+        style={[{
           position: 'relative',
           justifyContent: 'center',
-        }}>
+        }, containerStyle]}>
         <TouchableHighlight
           key={index}
           underlayColor={underlayColor}
